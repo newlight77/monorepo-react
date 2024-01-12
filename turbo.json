@@ -1,0 +1,73 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/*.env"
+  ],
+  "globalEnv": [],
+  "concurrency": 14,
+  "pipeline": {
+    "build": {
+      "inputs": ["src/**/*", "package.json", "tsconfig.json"],
+      "outputs": [
+        "dist/**",
+        "build/**"
+      ],
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": false
+    },
+    "test": {
+      "inputs": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.feature", "**/*.step.ts"],
+      "outputs": ["coverage/**"],
+      "dependsOn": [],
+      "cache": false,
+      "persistent": false
+    },
+    "test:unit": {
+      "inputs": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.test.ts", "**/*.test.tsx"],
+      "outputs": ["coverage/**"],
+      "dependsOn": [],
+      "cache": false,
+      "persistent": false
+    },
+    "test:features": {
+      "inputs": ["**/*.feature", "**/*.step.ts"],
+      "outputs": ["coverage/**"],
+      "dependsOn": [],
+      "cache": false,
+      "persistent": false
+    },
+    "test:e2e": {
+      "inputs": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.test.ts", "**/*.test.tsx"],
+      "outputs": ["coverage/**"],
+      "dependsOn": [],
+      "cache": false,
+      "persistent": false
+    },
+    "test:smoke": {
+      "inputs": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.smoke-test.ts", "**/*.smoke-test.tsx"],
+      "outputs": ["coverage/**"],
+      "dependsOn": [],
+      "cache": false,
+      "persistent": false
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": false
+    },
+    "dev": {
+      "inputs": ["src/**/*", "package.json", "tsconfig.json"],
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": false
+    },
+    "start": {
+      "cache": false,
+      "persistent": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

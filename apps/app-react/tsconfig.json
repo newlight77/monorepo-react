@@ -1,0 +1,23 @@
+{
+  "extends": "@shared-lib/tsconfig-custom/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./build",
+    "paths": {
+      "@/demo/*": ["./src/demo/*"],
+      "@/react-mui-joy/*": ["../../packages/shared-ui/react-mui-joy/src/*"]
+    },
+    "rootDirs": ["."]
+  },
+  "exclude": [
+    "build",
+    "dist",
+    "node_modules",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
+}

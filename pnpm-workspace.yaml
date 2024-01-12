@@ -1,0 +1,4 @@
+packages:
+  - "apps/app-react"
+  - "packages/shared-lib/**/*"
+  - "packages/shared-ui/react-mui-joy"

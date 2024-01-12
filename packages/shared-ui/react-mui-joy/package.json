@@ -1,0 +1,59 @@
+{
+  "name": "@shared-ui/react-mui-joy",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "clean": "rm -rf .turbo node_modules dist coverage",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "eslint 'src/**/*.ts*'",
+    "test": "jest --passWithNoTests --coverage --colors",
+    "test:unit": "jest --passWithNoTests --coverage --colors",
+    "test:features": "",
+    "test:e2e": "",
+    "test:smoke": ""
+  },
+  "jest": {
+    "preset": "@shared-lib/jest-presets/jest/react"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.2",
+    "@mui/joy": "5.0.0-beta.20",
+    "@mui/material": "^5.15.2",
+    "date-fns": "^2.29.3",
+    "highlight.js": "^11.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zxcvbn-typescript": "^5.0.1"
+  },
+  "devDependencies": {
+    "@shared-lib/jest-presets": "workspace:^",
+    "@shared-lib/tsconfig-custom": "workspace:^",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^20.8.2",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "@types/react-test-renderer": "^18.0.0",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^27",
+    "npm-run-all": "^4.1.5",
+    "react-test-renderer": "^18.2.0",
+    "ts-jest": "^27.1.4",
+    "tsup": "^6.2.3",
+    "typescript": "^4.9.5"
+  }
+}

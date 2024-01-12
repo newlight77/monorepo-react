@@ -1,0 +1,15 @@
+{
+  "display": "Test",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "rootDirs": ["./src", "./test", "./__test__"],
+    "strict": false,
+    "strictNullChecks": false
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "test"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Next.js",
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports" : true,
+    "declaration": false,
+    "declarationMap": false,
+    "experimentalDecorators": true,
+    "incremental": true,
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "es2022"],
+    "module": "es2022",
+    "noEmit": true,
+    "outDir": "./dist",
+    "paths": {
+      "react": [ "./node_modules/@types/react" ],
+      "@/components/*": ["components/*"],
+      "@/lib/*": ["lib/*"],
+      "@/styles/*": ["styles/*"]
+    },
+    "resolveJsonModule": true,
+    "rootDirs": ["./src", "./storybook"],
+    "strict": true,
+    "target": "es2022",
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "extends": "./base.json",
+  "exclude": ["node_modules", "dist", "build"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "ts-node": {
+    "esm": true,
+    "esModuleInterop": true,
+    "experimentalSpecifierResolution": "node",
+    "module": "CommonJs",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true
+  }
+}

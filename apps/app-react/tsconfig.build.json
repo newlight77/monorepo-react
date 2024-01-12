@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./build",
+    "rootDirs": ["./src", "./test", "./__test__"],
+    "strict": false,
+    "strictNullChecks": false
+  },
+  "exclude": [
+    "build",
+    "dist",
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".eslintrc.js",
+    "packages/shared-ui/"
+  ]
+}

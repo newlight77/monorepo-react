@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "Display": "Vite",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "esModuleInterop": false,
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "es2022"],
+    "module": "es2022",
+    "noEmit": true,
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "rootDirs": ["./src", "./storybook"],
+    "skipLibCheck": false,
+    "target": "es2022",
+    "types": ["vite/client"],
+    "ts-node": {
+      "esm": true,
+      "esModuleInterop": true,
+      "experimentalSpecifierResolution": "node",
+      "module": "CommonJs",
+      "moduleResolution": "node",
+      "noEmit": true,
+      "allowSyntheticDefaultImports": true
+    }
+  }
+}

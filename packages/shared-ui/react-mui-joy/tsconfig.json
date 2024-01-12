@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist/index.d.ts",
+    "jsx": "react",
+    "outDir": "./dist",
+    "rootDirs": ["./src", "./test", "./__test__"]
+  },
+  "exclude": ["node_modules", "dist", "build"],
+  "extends": "@shared-lib/tsconfig-custom/react.json",
+  "include": ["src"]
+}

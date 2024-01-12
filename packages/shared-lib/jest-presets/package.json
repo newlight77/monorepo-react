@@ -1,0 +1,12 @@
+{
+  "name": "@shared-lib/jest-presets",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "@graphql-tools/jest-transform": "~1.2.0",
+    "babel-jest": "^27.5.1",
+    "identity-obj-proxy": "~3.0.0",
+    "ts-jest": "^27.1.4"
+  }
+}

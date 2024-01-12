@@ -1,0 +1,34 @@
+{
+  "name": "monorepo-react",
+  "repository": "monorepo-react",
+  "author": "Kong To <newlight77@gmail.com>",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --continue",
+    "start": "turbo run start",
+    "format": "prettier '**/*.{js,jsx,ts,tsx,md}' --write",
+    "lint": "turbo run lint --cache-dir=.turbo",
+    "codecov": "codecov -t e82770d3-316e-40ed-bdc0-7326a73f3b06",
+    "test": "turbo run test --cache-dir=.turbo",
+    "test:job": "turbo run test --cache-dir=.turbo --filter app-job",
+    "test:unit": "turbo run test:unit --cache-dir=.turbo",
+    "test:features": "turbo run test:features --cache-dir=.turbo",
+    "test:e2e": "turbo run test:e2e --cache-dir=.turbo",
+    "test:smoke": "turbo run test:smoke --cache-dir=.turbo",
+    "clean": "turbo run clean && find . -name 'node_modules' -exec rm -fr {} \\; && rm -fr .turbo",
+    "coverage:merge": "./util/ci/prepare-coverage.sh && nyc merge coverage/unit coverage/merged/coverage-unit-merged.json && nyc merge coverage/features coverage/merged/coverage-features-merged.json && nyc merge coverage/smoke coverage/merged/coverage-smoke-merged.json && nyc report --temp-dir ./coverage/merged --reporter=lcov",
+    "coverage:report": "sonar-scanner -Dsonar.host.url=${SONAR_URL} -Dsonar.login=${SONAR_USER} -Dsonar.password=${SONAR_PASSWORD}"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^15.1.0",
+    "prettier": "^3.1.0",
+    "turbo": "^1.11.0"
+  },
+  "nyc": {
+    "extends": "./packages/shared-lib/config/nycrc/.nycrc"
+  },
+  "packageManager": "pnpm@8.8.0"
+}
