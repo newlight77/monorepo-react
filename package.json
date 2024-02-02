@@ -28,7 +28,7 @@
     "turbo": "^1.11.0"
   },
   "nyc": {
-    "extends": "./packages/shared-lib/config/nycrc/.nycrc"
+    "extends": "./packages/shared-lib/nycrc/.nycrc"
   },
   "packageManager": "pnpm@8.8.0"
 }
